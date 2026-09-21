@@ -6,12 +6,15 @@
       "choice": "commuting",
       "confidence": 0.12,
       "probabilities": {
-        "commuting": 0.24,
-        "business": 0.22,
-        "leisure": 0.15,
-        "visitor_activity": 0.13,
-        "personal_errand": 0.17,
-        "transport_connection": 0.09
+        "commuting": 0.20,
+        "business": 0.17,
+        "leisure": 0.13,
+        "dining_nightlife": 0.08,
+        "event_attendance": 0.05,
+        "visitor_activity": 0.10,
+        "shopping": 0.07,
+        "other": 0.12,
+        "transport_connection": 0.08
       }
     },
     "demo_willingness_to_pay": {
