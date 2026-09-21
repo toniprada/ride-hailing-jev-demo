@@ -3,7 +3,7 @@ import {defaultCategories,validateCategories} from '../lib/categories.mjs';
 import {tripSignals} from '../lib/signals.mjs';
 import {renderScoreLine} from './score-line.mjs';
 import {enrichPoint,sampleMunicipalPoint} from '../lib/geography-core.mjs';
-import {randomMadridLocalDateTime} from './random-datetime.mjs';
+import {nextMadridMorning,randomMadridLocalDateTime} from './random-datetime.mjs';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import '@fontsource-variable/manrope';
@@ -73,6 +73,6 @@ async function initialize(){
  $('#when').oninput=markStale;
  for(const side of ['origin','destination'])$(`#${side}`).onchange=event=>{if(event.target.value==='custom')return setTarget(side);const place=places[+event.target.value];trip.current_trip[side]={coordinates:structuredClone(place.coordinates)};updateGeo();renderMap(true);markStale();};
  document.querySelectorAll('[data-pick]').forEach(button=>button.onclick=()=>setTarget(button.dataset.pick));$('#fit').onclick=()=>renderMap(true);$('#swap').onclick=()=>{[trip.current_trip.origin,trip.current_trip.destination]=[trip.current_trip.destination,trip.current_trip.origin];updateGeo();renderMap(true);markStale();};
- renderCategories();setTrip(places[0].coordinates,places[1].coordinates,'2026-09-22T07:45');setTarget('origin');
+ renderCategories();setTrip(places[4].coordinates,places[5].coordinates,nextMadridMorning());setTarget('origin');evaluateCurrent();
 }
 initialize().catch(()=>{$('#app').innerHTML='<main><h1>Could not load the demo.</h1><p>Reload the page to try again.</p></main>';});

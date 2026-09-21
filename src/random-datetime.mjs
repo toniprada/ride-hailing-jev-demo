@@ -18,3 +18,10 @@ export function randomMadridLocalDateTime(now = new Date(), rng = Math.random) {
   const minuteOfDay = Math.floor(rng() * 24 * 60);
   return `${date.toISOString().slice(0, 10)}T${pad(Math.floor(minuteOfDay / 60))}:${pad(minuteOfDay % 60)}`;
 }
+
+export function nextMadridMorning(now = new Date()) {
+  const {year, month, day} = madridDateParts(now);
+  const date = new Date(`${year}-${month}-${day}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + 1);
+  return `${date.toISOString().slice(0, 10)}T08:00`;
+}

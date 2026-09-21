@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {randomMadridLocalDateTime} from '../src/random-datetime.mjs';
+import {nextMadridMorning,randomMadridLocalDateTime} from '../src/random-datetime.mjs';
 
 test('random date and time covers the next seven Madrid-local calendar days', () => {
   const now = new Date('2026-09-21T12:00:00Z');
@@ -17,4 +17,8 @@ test('random date and time covers the next seven Madrid-local calendar days', ()
 test('random date is based on Madrid local date across a UTC-day boundary', () => {
   const now = new Date('2026-09-21T22:30:00Z');
   assert.equal(randomMadridLocalDateTime(now, () => 0), '2026-09-22T00:00');
+});
+
+test('opening scenario uses the next Madrid-local morning', () => {
+  assert.equal(nextMadridMorning(new Date('2026-09-21T22:30:00Z')), '2026-09-23T08:00');
 });
