@@ -14,6 +14,42 @@ The provider receives a plain-language trip scenario and the selected purpose ca
 
 The available evidence is intentionally limited. A nearby school, station, or attraction describes a location; it does not establish why an individual is travelling. Predictions are exploratory and their probabilities are not calibrated for real passengers.
 
+## Example evaluation
+
+This is an illustrative scenario produced for a weekday morning trip. It is the kind of plain-language context sent to Jev:
+
+> It takes place on Tuesday, 22 September 2026 at 7:45 AM in Madrid, Spain. The origin and destination are 2.65 km apart in a straight line; this is not a road route or travel-time estimate. Origin is in Trafalgar, Chamberí. Census snapshot: mean age 44.4 years; mean net household income €51,693 per year. No named relevant place is mapped within 100 m. Destination is in Ciudad Universitaria, Moncloa - Aravaca. Census snapshot: mean age 44.9 years; mean net household income €71,512 per year. The selected point is inside Ciudad Universitaria. Named places within 100 m include Facultad de Filología y Filosofía.
+
+Jev returns typed probabilities and scores. Results vary between evaluations; this is the response shape shown by the demo:
+
+```json
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "demo_purpose": {
+      "type": "choice",
+      "choice": "commuting",
+      "probabilities": {
+        "commuting": 0.76,
+        "business": 0.08,
+        "leisure": 0.06,
+        "tourism": 0.01,
+        "other": 0.07,
+        "transport_connection": 0.02
+      },
+      "confidence": 0.69
+    },
+    "demo_willingness_to_pay": {
+      "type": "score",
+      "score": 0.6,
+      "legend": {"0": "Low", "1": "High"},
+      "probabilities": {"0": 0.4, "1": 0.6},
+      "confidence": 0.3
+    }
+  }
+}
+```
+
 ## Run locally
 
 Requires Node.js 22.
