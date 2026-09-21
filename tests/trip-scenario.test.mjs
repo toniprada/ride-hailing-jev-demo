@@ -22,6 +22,7 @@ test('provider state is an explanatory trip scenario with no raw coordinates', (
   assert.match(request.state.trip_scenario, /Destination is/);
   assert.match(request.state.trip_scenario, /Census snapshot: mean age 44\.4 years; mean net household income €51,693 per year/);
   assert.doesNotMatch(request.state.trip_scenario, /household size/);
+  assert.match(request.state.trip_scenario, /Teatro Quevedo/);
   assert.doesNotMatch(request.state.trip_scenario, /anonymous ride-hailing trip|a weekday|a weekend|Neighborhood names identify location only/);
   assert.doesNotMatch(JSON.stringify(request.state), /40\.4355|-3\.7035|coordinates/);
   assert.match(request.questions.demo_purpose.instructions, /`trip_scenario`/);
