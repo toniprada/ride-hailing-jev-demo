@@ -8,7 +8,7 @@ export default async function handler(req,res){
  const origin=req.headers.origin;if(origin){try{if(new URL(origin).host!==req.headers.host)return send(403,{error:'Origin is not allowed.'});}catch{return send(403,{error:'Origin is not allowed.'});}}
  if(!process.env.TYPESAFE_API_KEY)return send(503,{error:'The service is not configured. Try again later.'});
  const now=Date.now();if(windows.size>2000)for(const [k,v] of windows)if(now-v.start>60000)windows.delete(k);
- const ip=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'local').split(',')[0];let slot=windows.get(ip);if(!slot||now-slot.start>60000){slot={start:now,count:0};windows.set(ip,slot);}if(++slot.count>20)return send(429,{error:'Maximum 20 evaluations per minute. Wait a moment.'});
+ const ip=String(req.headers['x-forwarded-for']||req.socket?.remoteAddress||'local').split(',')[0];let slot=windows.get(ip);if(!slot||now-slot.start>60000){slot={start:now,count:0};windows.set(ip,slot);}if(++slot.count>60)return send(429,{error:'Maximum 60 evaluations per minute. Wait a moment.'});
  let request,categories;
  try{let body=req.body;if(body===undefined){let raw='';for await(const chunk of req){raw+=chunk;if(raw.length>70000)return send(413,{error:'The context is too large.'});}body=JSON.parse(raw);}if(typeof body==='string')body=JSON.parse(body);if(JSON.stringify(body).length>70000)return send(413,{error:'The context is too large.'});request=prepare(body);categories=validateCategories(body.categories);}catch(e){return send(400,{error:e.message?.slice(0,180)||'Check the trip details.'});}
  const start=performance.now();
