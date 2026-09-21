@@ -45,6 +45,13 @@ Jev returns typed probabilities and scores. Results vary between evaluations; th
       "legend": {"0": "Low", "1": "High"},
       "probabilities": {"0": 0.4, "1": 0.6},
       "confidence": 0.3
+    },
+    "demo_willingness_to_wait": {
+      "type": "score",
+      "score": 0.4,
+      "legend": {"0": "Low", "1": "High"},
+      "probabilities": {"0": 0.6, "1": 0.4},
+      "confidence": 0.28
     }
   }
 }
