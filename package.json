@@ -1,0 +1,22 @@
+{
+  "name": "madrid-trip-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=.env.local dev-server.mjs",
+    "build": "vite build",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "leaflet": "1.9.4",
+    "@fontsource-variable/manrope": "5.2.8"
+  },
+  "devDependencies": {
+    "vite": "^6.4.0"
+  }
+}

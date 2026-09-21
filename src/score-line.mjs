@@ -1,0 +1,2 @@
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export function renderScoreLine(score,low='Low',high='High'){const position=score*100;return `<div class="score-value">${score.toFixed(2)} / 1</div><div class="score-line" role="img" aria-label="${esc(low)} to ${esc(high)}: ${score.toFixed(2)} of 1" data-position="${position}"><i style="left:${position}%"></i></div><div class="score-endpoints"><span>${esc(low)}</span><span>${esc(high)}</span></div>`;}

@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';let render;try{({renderScoreLine:render}=await import('../src/score-line.mjs'))}catch{}
+test('two-level score line uses exact provider score for endpoints, midpoint and fraction',()=>{assert.ok(render);for(const [score,position]of [[0,0],[.5,50],[1,100],[.37,37]]){const html=render(score,'Low','High');assert.ok(html.includes(`data-position="${position}"`));assert.ok(html.includes(`${score.toFixed(2)} / 1`));assert.ok(html.includes('role="img"'));assert.ok(!html.includes('type="range"'));}});

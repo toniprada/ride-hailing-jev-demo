@@ -1,0 +1,24 @@
+{
+  "demo_purpose": {
+    "type": "choice",
+    "instructions": "Evaluate only `trip_scenario`. Make a best-effort prediction with honest uncertainty. Do not invent residence, employment, flights, appointments, urgency, age, household composition, or individual income. Consider direction, day, and time together. Price and wait are independent estimates. Do not default to medium under uncertainty: distribute probabilities according to the evidence and separate confidence from intensity. Never make `other` the modal choice solely because local evidence is sparse; reserve it for affirmative evidence of a purpose outside the named categories, and otherwise express uncertainty across the plausible named purposes. This is not causal measurement, fare advice, or a decision about a real person. What is the most likely primary purpose of the trip described in `trip_scenario`?",
+    "criteria": {
+      "commuting": "Travel for work or study.",
+      "business": "A professional meeting, errand, or business activity.",
+      "leisure": "Entertainment or recreational activity.",
+      "tourism": "Tourist sightseeing, monuments, or visitor activities; do not infer it merely from travel to an airport or station.",
+      "other": "A likely purpose outside the other submitted categories; never uncertainty or missing information.",
+      "transport_connection": "Access to or exit from an airport, air terminal, main railway station, interchange, or bus terminal to continue or finish another journey. It does not imply tourism or the full trip purpose."
+    }
+  },
+  "demo_willingness_to_pay": {
+    "type": "score",
+    "instructions": "Evaluate only `trip_scenario`. What willingness to pay is most plausible for this request? High means willingness to pay more for convenience, time, or other contextual value; low means likely prioritizing lower cost. The estimate is weak without individual information: express uncertainty through probabilities and confidence without attributing area income to the passenger.",
+    "criteria": ["Low: likely to prioritize lower cost over convenience or time.","High: likely willing to pay more for convenience or time in this trip context."]
+  },
+  "demo_willingness_to_wait": {
+    "type": "score",
+    "instructions": "Evaluate only `trip_scenario`. What willingness to wait for pickup is most plausible? High means willingness to wait longer; low means likely wanting prompt pickup. Do not claim a deadline or urgency that is not present, and do not estimate exact minutes.",
+    "criteria": ["Low: likely wants prompt pickup and has little willingness to wait.","High: likely willing to wait longer for pickup."]
+  }
+}

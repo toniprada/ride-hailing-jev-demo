@@ -1,0 +1,48 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "demo_purpose": {
+      "type": "choice",
+      "choice": "commuting",
+      "confidence": 0.12,
+      "probabilities": {
+        "commuting": 0.24,
+        "business": 0.22,
+        "leisure": 0.15,
+        "tourism": 0.13,
+        "other": 0.17,
+        "transport_connection": 0.09
+      }
+    },
+    "demo_willingness_to_pay": {
+      "type": "score",
+      "score": 0.6,
+      "confidence": 0.3,
+      "probabilities": {
+        "0": 0.4,
+        "1": 0.6
+      },
+      "legend": {
+        "0": "Low",
+        "1": "High"
+      }
+    },
+    "demo_willingness_to_wait": {
+      "type": "score",
+      "score": 0.7,
+      "confidence": 0.2,
+      "probabilities": {
+        "0": 0.3,
+        "1": 0.7
+      },
+      "legend": {
+        "0": "Low",
+        "1": "High"
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 100,
+    "output_tokens": 50
+  }
+}

@@ -1,0 +1,27 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+
+node_modules/
+dist/
+.vercel/
+.vercel
+.impeccable/
+
+# Local research material and raw source downloads are intentionally not part
+# of the public demo repository.
+calendar-data/
+census-data/
+demo-verification/
+experiment/
+facility-data/
+geo-data/
+jev_v3/
+synthetic_v2/
+scripts/
+DESIGN.md
+PRODUCT.md
+.env*
+!.env.example
