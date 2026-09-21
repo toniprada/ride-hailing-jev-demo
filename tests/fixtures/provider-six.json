@@ -9,8 +9,8 @@
         "commuting": 0.24,
         "business": 0.22,
         "leisure": 0.15,
-        "tourism": 0.13,
-        "other": 0.17,
+        "visitor_activity": 0.13,
+        "personal_errand": 0.17,
         "transport_connection": 0.09
       }
     },

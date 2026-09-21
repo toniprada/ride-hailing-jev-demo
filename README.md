@@ -33,8 +33,8 @@ Jev returns typed probabilities and scores. Results vary between evaluations; th
         "commuting": 0.76,
         "business": 0.08,
         "leisure": 0.06,
-        "tourism": 0.01,
-        "other": 0.07,
+        "visitor_activity": 0.01,
+        "personal_errand": 0.07,
         "transport_connection": 0.02
       },
       "confidence": 0.69
