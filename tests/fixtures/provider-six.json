@@ -6,10 +6,9 @@
       "choice": "commuting",
       "confidence": 0.12,
       "probabilities": {
-        "commuting": 0.20,
+        "commuting": 0.24,
         "business": 0.17,
-        "leisure": 0.13,
-        "dining_nightlife": 0.08,
+        "leisure": 0.17,
         "event_attendance": 0.05,
         "visitor_activity": 0.10,
         "shopping": 0.07,

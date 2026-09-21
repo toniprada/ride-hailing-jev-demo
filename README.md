@@ -32,8 +32,7 @@ Jev returns typed probabilities and scores. Results vary between evaluations; th
       "probabilities": {
         "commuting": 0.58,
         "business": 0.08,
-        "leisure": 0.06,
-        "dining_nightlife": 0.04,
+        "leisure": 0.10,
         "event_attendance": 0.03,
         "visitor_activity": 0.01,
         "shopping": 0.05,
