@@ -8,15 +8,14 @@
       "leisure": "A social, recreational, dining, nightlife, or unstructured personal outing. It can be more plausible near restaurants, cafés, bars, clubs, parks, cinemas, or entertainment venues at common social or meal times.",
       "event_attendance": "Travel to or from a scheduled public or private occasion, such as a concert, sports match, theatre performance, convention, festival, ceremony, or conference session. It can be more plausible when a recognisable venue, the date, and the time together suggest an organised gathering.",
       "visitor_activity": "Travel for sightseeing or an attraction visit, including a monument, museum, gallery, landmark, historic site, zoo, theme park, or cultural destination. It can be more plausible near visitor-oriented places that align with the trip’s direction and time.",
-      "shopping": "Travel primarily to buy goods or browse retail, such as visiting a shopping centre, department store, market, high street retail area, supermarket, or cluster of shops. It can be more plausible where retail places align with the trip’s direction and time.",
       "other": "A practical trip purpose outside the submitted categories, such as healthcare, visiting someone, personal administration, childcare, or a comparable personal task. It requires positive contextual support and is not uncertainty.",
       "transport_connection": "Travel to, from, or between long-distance transport services, such as a flight, intercity train, or long-distance coach at an airport, main railway station, or intercity bus terminal. It can be more plausible when terminal context aligns with the trip’s direction and time."
     }
   },
   "demo_willingness_to_pay": {
     "type": "score",
-    "instructions": "Evaluate only `trip_scenario`. What willingness to pay is most plausible for this request? High means willingness to pay more for convenience, time, or other contextual value; low means likely prioritizing lower cost. The estimate is weak without individual information: express uncertainty through probabilities and confidence without attributing area income to the passenger.",
-    "criteria": ["Low: likely to prioritize lower cost over convenience or time.","High: likely willing to pay more for convenience or time in this trip context."]
+    "instructions": "Evaluate only `trip_scenario`. Estimate the propensity to accept this ride at a higher price rather than reject it for a cheaper, less convenient alternative such as public transport or another ride-hailing provider. High means more likely to accept the higher-priced ride; low means more likely to switch to a cheaper alternative.",
+    "criteria": ["Low: likely to reject a higher-priced ride and choose a cheaper, less convenient alternative such as public transport or another provider.","High: likely to accept this ride at a higher price rather than switch to a cheaper, less convenient alternative."]
   },
   "demo_willingness_to_wait": {
     "type": "score",
