@@ -43,17 +43,27 @@ Jev returns typed probabilities and scores. Results vary between evaluations; th
     "demo_willingness_to_pay": {
       "type": "score",
       "score": 0.6,
-      "legend": {"0": "Low", "1": "High"},
+      "legend": {
+        "0": "Low: likely to reject a higher-priced ride and choose a cheaper, less convenient alternative such as public transport or another provider.",
+        "1": "High: likely to accept this ride at a higher price rather than switch to a cheaper, less convenient alternative."
+      },
       "probabilities": {"0": 0.4, "1": 0.6},
       "confidence": 0.3
     },
     "demo_willingness_to_wait": {
       "type": "score",
       "score": 0.4,
-      "legend": {"0": "Low", "1": "High"},
+      "legend": {
+        "0": "Low: likely to cancel a requested car after a shorter wait when pickup is taking too long.",
+        "1": "High: likely to keep a requested car longer before cancelling when pickup is taking too long."
+      },
       "probabilities": {"0": 0.6, "1": 0.4},
       "confidence": 0.28
     }
+  },
+  "usage": {
+    "input_tokens": 1485,
+    "output_tokens": 116
   }
 }
 ```
