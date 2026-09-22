@@ -4,7 +4,7 @@
 
 This is an exploratory ride-hailing interface for asking TypeSafe Jev to classify a hypothetical trip in Madrid, Spain. It is not a booking product, navigation service, fare quote, or model of real passenger behavior.
 
-Pick an origin, destination, and local time, then evaluate the scenario. The demo turns verified local context into a concise natural-language description for Jev: date and time, straight-line separation, named mapped places near or containing each endpoint, and selected area-level census figures. It then asks Jev for a likely trip purpose and two continuous estimates: willingness to pay and willingness to wait.
+Pick an origin, destination, and local time, then evaluate the scenario. The demo turns verified local context into a concise natural-language description for Jev: date and time, straight-line separation, named mapped places near or containing each endpoint, and selected area-level census figures. It then asks Jev for a likely trip purpose, the propensity to accept this ride at a higher price rather than switch to a cheaper alternative, and the pickup wait tolerance before cancelling a requested car.
 
 The page shows both the exact context sent for the last evaluation and the typed response returned by Jev. Randomize samples two independent points inside official Madrid municipal boundaries, a Madrid-local time within the next seven calendar days, and performs one evaluation.
 
@@ -18,7 +18,7 @@ The available evidence is intentionally limited. A nearby school, station, or at
 
 This is an illustrative scenario produced for a weekday morning trip. It is the kind of plain-language context sent to Jev:
 
-> It takes place on Tuesday, 22 September 2026 at 7:45 AM in Madrid, Spain. The origin and destination are 2.65 km apart in a straight line; this is not a road route or travel-time estimate. Origin is in Trafalgar, Chamberí. Census snapshot: mean age 44.4 years; mean net household income €51,693 per year. No named relevant place is mapped within 100 m. Destination is in Ciudad Universitaria, Moncloa - Aravaca. Census snapshot: mean age 44.9 years; mean net household income €71,512 per year. The selected point is inside Ciudad Universitaria. Named places within 100 m include Facultad de Filología y Filosofía.
+> It takes place on Tuesday, 22 September 2026 at 7:45 AM in Madrid, Spain. The origin and destination are 2.65 km apart in a straight line; this is not a road route or travel-time estimate. Origin: Trafalgar, Chamberí. Origin census snapshot: mean age 44.4 years; mean net household income €51,693 per year. Origin has no named relevant place mapped within 100 m. Destination: Ciudad Universitaria, Moncloa - Aravaca. Destination census snapshot: mean age 44.9 years; mean net household income €71,512 per year. Destination is inside Ciudad Universitaria. Destination named places within 100 m include Facultad de Filología y Filosofía.
 
 Jev returns typed probabilities and scores. Results vary between evaluations; this is the response shape shown by the demo:
 
@@ -69,7 +69,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Then open `http://127.0.0.1:4173`.
+Then open `http://localhost:3000`.
 
 ```sh
 npm test
