@@ -19,7 +19,7 @@
   },
   "demo_willingness_to_wait": {
     "type": "score",
-    "instructions": "Evaluate only `trip_scenario`. What willingness to wait for pickup is most plausible? High means willingness to wait longer; low means likely wanting prompt pickup. Do not claim a deadline or urgency that is not present, and do not estimate exact minutes.",
-    "criteria": ["Low: likely wants prompt pickup and has little willingness to wait.","High: likely willing to wait longer for pickup."]
+    "instructions": "Evaluate only `trip_scenario`. Estimate how long the rider is likely to keep a requested car before cancelling because pickup is taking too long. High means more willing to wait before cancelling; low means more likely to cancel after a shorter wait.",
+    "criteria": ["Low: likely to cancel a requested car after a shorter wait when pickup is taking too long.","High: likely to keep a requested car longer before cancelling when pickup is taking too long."]
   }
 }
